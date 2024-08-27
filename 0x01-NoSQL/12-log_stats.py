@@ -11,5 +11,6 @@ if __name__ == "__main__":
     print(f'{nginx_collection.count_documents({})} logs')
     print('Methods:')
     for method in methods:
-        count = nginx_collection.count_documents({"method": method})
+        filter = {"$and": [{"method": method}, {"path": "/status"}]}
+        count = nginx_collection.count_documents(filter)
         print(f'\tmethod {method}: {count}')
