@@ -6,6 +6,7 @@ import redis
 from uuid import uuid1
 from typing import Union
 
+
 class Cache:
     """
     class represents cache memory
